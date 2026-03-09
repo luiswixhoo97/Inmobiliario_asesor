@@ -1,6 +1,6 @@
 <template>
   <div ref="containerRef" class="mb-12 md:mb-16">
-    <p v-if="subtitle" class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-gold">
+    <p v-if="subtitle" class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-blue-light">
       {{ subtitle }}
     </p>
     <h2 ref="titleRef" class="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
@@ -8,7 +8,7 @@
         v-for="(word, i) in words"
         :key="i"
         class="split-word inline-block mr-[0.3em]"
-        :class="{ 'gold-gradient-text': goldWords.includes(i) }"
+        :class="{ 'blue-gradient-text': goldWords.includes(i) }"
       >{{ word }}</span>
     </h2>
     <GoldLine

@@ -4,39 +4,17 @@
     ref="preloaderRef"
     class="fixed inset-0 z-[9999] flex items-center justify-center"
   >
-    <div ref="topPanel" class="absolute inset-x-0 top-0 h-1/2 bg-black-deep" />
-    <div ref="bottomPanel" class="absolute inset-x-0 bottom-0 h-1/2 bg-black-deep" />
+    <div ref="topPanel" class="absolute inset-x-0 top-0 h-1/2 bg-off-white" />
+    <div ref="bottomPanel" class="absolute inset-x-0 bottom-0 h-1/2 bg-off-white" />
 
-    <div ref="contentRef" class="relative z-10 text-center">
-      <h1 class="font-display text-4xl font-semibold tracking-wide md:text-5xl lg:text-6xl">
-        <span
-          v-for="(char, i) in nameChars"
-          :key="i"
-          ref="charsRef"
-          class="preloader-char inline-block"
-          :class="char === ' ' ? 'mr-3' : ''"
-          :style="{ color: char === ' ' ? 'transparent' : '' }"
-        >{{ char === ' ' ? '\u00A0' : char }}</span>
-      </h1>
-      <svg ref="lineRef" class="mx-auto mt-4" width="200" height="4">
-        <line
-          ref="svgLine"
-          x1="0" y1="2" x2="200" y2="2"
-          stroke="url(#preloaderGold)"
-          stroke-width="2"
-          stroke-linecap="round"
+    <div ref="contentRef" class="relative z-10 flex flex-col items-center justify-center">
+      <div ref="logoRef" class="opacity-0">
+        <img
+          :src="logoFinca"
+          alt="Finca Inmobiliaria"
+          class="h-28 w-auto object-contain md:h-36 lg:h-44"
         />
-        <defs>
-          <linearGradient id="preloaderGold" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#B8942E" />
-            <stop offset="50%" stop-color="#F5D77A" />
-            <stop offset="100%" stop-color="#B8942E" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <p ref="taglineRef" class="mt-3 text-sm tracking-[0.3em] text-gray-muted uppercase opacity-0">
-        Bienes Raíces Premium
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +22,7 @@
 <script setup>
 import { ref, onMounted, nextTick } from 'vue'
 import gsap from 'gsap'
+import logoFinca from '../assets/images/LOGO-FINCA.png'
 
 const emit = defineEmits(['complete'])
 
@@ -52,20 +31,10 @@ const preloaderRef = ref(null)
 const topPanel = ref(null)
 const bottomPanel = ref(null)
 const contentRef = ref(null)
-const charsRef = ref([])
-const svgLine = ref(null)
-const taglineRef = ref(null)
-
-const advisorName = 'Carlos Martínez'
-const nameChars = advisorName.split('')
+const logoRef = ref(null)
 
 onMounted(async () => {
   await nextTick()
-
-  const line = svgLine.value
-  if (line) {
-    gsap.set(line, { strokeDasharray: 200, strokeDashoffset: 200 })
-  }
 
   const tl = gsap.timeline({
     onComplete: () => {
@@ -74,34 +43,32 @@ onMounted(async () => {
     },
   })
 
-  tl.from('.preloader-char', {
+  tl.fromTo(logoRef.value, {
     opacity: 0,
-    y: 40,
-    duration: 0.6,
+    scale: 0.7,
+    y: 30,
+  }, {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 1,
     ease: 'power3.out',
-    stagger: 0.04,
   })
 
-  if (line) {
-    tl.to(line, {
-      strokeDashoffset: 0,
-      duration: 1,
-      ease: 'power2.inOut',
-    }, '-=0.3')
-  }
-
-  tl.to(taglineRef.value, {
-    opacity: 1,
-    duration: 0.6,
-    ease: 'power2.out',
-  }, '-=0.5')
+  tl.to(logoRef.value, {
+    scale: 1.02,
+    duration: 0.3,
+    ease: 'power2.inOut',
+    yoyo: true,
+    repeat: 1,
+  }, '+=0.2')
 
   tl.to(contentRef.value, {
     opacity: 0,
     scale: 0.95,
     duration: 0.5,
     ease: 'power2.in',
-  }, '+=0.4')
+  }, '+=0.6')
 
   tl.to(topPanel.value, {
     yPercent: -100,

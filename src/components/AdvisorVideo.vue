@@ -1,13 +1,13 @@
 <template>
-  <section ref="sectionRef" class="noise-overlay relative py-24 md:py-32">
+  <section ref="sectionRef" class="noise-overlay relative py-24 md:py-32 bg-off-white">
     <div class="mx-auto max-w-5xl px-6 lg:px-12">
       <div class="text-center">
-        <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-gold">Conóceme</p>
+        <p class="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-blue-light">Conóceme</p>
         <TextSplitReveal
           text="Una Conversación Personal"
           tag="h2"
           class-name="font-display text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl mb-12 justify-center"
-          word-class="text-white"
+          word-class="text-gray-card"
         />
       </div>
 
@@ -24,19 +24,19 @@
             width="calc(100% - 2px)" height="calc(100% - 2px)"
             rx="4"
             fill="none"
-            stroke="url(#videoFrameGold)"
+            stroke="url(#videoFrameBlue)"
             stroke-width="1.5"
           />
           <defs>
-            <linearGradient id="videoFrameGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#B8942E" />
-              <stop offset="50%" stop-color="#F5D77A" />
-              <stop offset="100%" stop-color="#B8942E" />
+            <linearGradient id="videoFrameBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1D3A6D" />
+              <stop offset="50%" stop-color="#36A9E1" />
+              <stop offset="100%" stop-color="#1D3A6D" />
             </linearGradient>
           </defs>
         </svg>
 
-        <div class="relative aspect-video overflow-hidden rounded-sm bg-black-alt">
+        <div class="relative aspect-video overflow-hidden rounded-sm bg-gray-card">
           <img
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&q=80"
             alt="Video del asesor"
@@ -44,15 +44,15 @@
           />
           <div class="absolute inset-0 flex items-center justify-center">
             <button
-              class="group flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-black-deep/50 backdrop-blur-sm transition-all duration-300 hover:border-gold hover:scale-110 gold-border-glow"
+              class="group flex h-20 w-20 items-center justify-center rounded-full border-2 border-blue/60 bg-off-white/80 backdrop-blur-sm transition-all duration-300 hover:border-blue hover:scale-110 blue-border-glow"
             >
-              <svg class="ml-1 h-8 w-8 text-gold transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="ml-1 h-8 w-8 text-blue-light transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </button>
           </div>
           <div class="play-pulse absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div class="h-20 w-20 rounded-full border border-gold/30 animate-ping" style="animation-duration: 2s;" />
+            <div class="h-20 w-20 rounded-full border border-blue/30 animate-ping" style="animation-duration: 2s;" />
           </div>
         </div>
       </div>

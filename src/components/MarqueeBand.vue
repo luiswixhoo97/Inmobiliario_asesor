@@ -1,5 +1,5 @@
 <template>
-  <div class="marquee-wrapper overflow-hidden border-y border-gold/10 bg-black-alt py-5 md:py-6">
+  <div class="marquee-wrapper flex min-h-screen items-center overflow-hidden border-y border-blue/10 bg-off-white py-5 md:py-6">
     <div class="marquee-track flex whitespace-nowrap">
       <span
         v-for="n in 3"
@@ -9,11 +9,11 @@
         <span
           v-for="(word, i) in words"
           :key="`${n}-${i}`"
-          class="mx-6 font-display text-2xl font-semibold uppercase tracking-[0.15em] text-gold/80 md:mx-10 md:text-3xl lg:text-4xl"
+          class="mx-6 font-display text-2xl font-semibold uppercase tracking-[0.15em] text-blue-light/90 md:mx-10 md:text-3xl lg:text-4xl"
         >
           {{ word }}
         </span>
-        <span class="mx-6 text-gold/40 md:mx-10">✦</span>
+        <span class="mx-6 text-blue/50 md:mx-10">✦</span>
       </span>
     </div>
   </div>

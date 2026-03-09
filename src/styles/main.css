@@ -1,23 +1,37 @@
 @import "tailwindcss";
 
 @theme {
+  /* Base (desde ConnectSection.vue) */
   --color-black-deep: #0A0A0A;
   --color-black-alt: #111111;
   --color-gray-card: #1A1A1A;
   --color-gray-border: #2A2A2A;
   --color-gray-muted: #888888;
   --color-gray-light: #E0E0E0;
+
+  /* Fondo página: blanco no puro */
+  --color-off-white: #F5F5F4;
+
+  /* Paleta azul (nueva) */
+  --color-blue-light: #36A9E1;
+  --color-blue: #1D71B8;
+  --color-blue-dark: #1D3A6D;
+  --color-blue-deep: #213057;
+
+  /* Gold se mantiene para ConnectSection (base) */
   --color-gold: #C6A55A;
   --color-gold-highlight: #D4AF37;
   --color-gold-dark: #8B6914;
   --color-gold-pale: #F5D77A;
 
-  --font-sans: "Inter", sans-serif;
-  --font-display: "Playfair Display", serif;
+  --font-sans: "TT Hoves Pro Trial", sans-serif;
+  --font-display: "TT Hoves Pro Trial", sans-serif;
 }
 
 html {
   scroll-behavior: auto;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 5rem; /* espacio para navbar fija al hacer snap */
 }
 
 html.lenis, html.lenis body {
@@ -38,13 +52,19 @@ html.lenis, html.lenis body {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-black-deep);
-  color: var(--color-gray-light);
+  background-color: var(--color-off-white);
+  color: var(--color-gray-card);
+}
+
+/* Scroll por secciones: cada scroll lleva a la siguiente/anterior sección */
+main > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 ::selection {
-  background-color: rgba(212, 175, 55, 0.3);
-  color: #fff;
+  background-color: rgba(29, 113, 184, 0.35);
+  color: #f3f3f3;
 }
 
 .noise-overlay {
@@ -63,6 +83,27 @@ body {
   background-size: 256px 256px;
 }
 
+/* Acento azul (paleta nueva) */
+.blue-gradient-text {
+  background: linear-gradient(135deg, #1D3A6D, #1D71B8, #36A9E1, #1D71B8, #1D3A6D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blue-gradient-bg {
+  background: linear-gradient(135deg, #1D3A6D, #1D71B8, #36A9E1, #1D71B8, #1D3A6D);
+}
+
+.blue-glow {
+  box-shadow: 0 0 20px rgba(29, 113, 184, 0.35), 0 0 40px rgba(29, 113, 184, 0.12);
+}
+
+.blue-border-glow {
+  box-shadow: 0 0 15px rgba(29, 113, 184, 0.25), inset 0 0 15px rgba(29, 113, 184, 0.06);
+}
+
+/* Base ConnectSection: se mantienen estilos gold para esa sección */
 .gold-gradient-text {
   background: linear-gradient(135deg, #B8942E, #D4AF37, #F5D77A, #D4AF37, #B8942E);
   -webkit-background-clip: text;

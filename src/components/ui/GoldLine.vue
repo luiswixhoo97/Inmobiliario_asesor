@@ -12,17 +12,17 @@
       :y1="height / 2"
       :x2="width"
       :y2="height / 2"
-      stroke="url(#goldGradient)"
+      stroke="url(#blueGradient)"
       :stroke-width="strokeWidth"
       stroke-linecap="round"
     />
     <defs>
-      <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#B8942E" />
-        <stop offset="30%" stop-color="#D4AF37" />
-        <stop offset="50%" stop-color="#F5D77A" />
-        <stop offset="70%" stop-color="#D4AF37" />
-        <stop offset="100%" stop-color="#B8942E" />
+      <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#1D3A6D" />
+        <stop offset="30%" stop-color="#1D71B8" />
+        <stop offset="50%" stop-color="#36A9E1" />
+        <stop offset="70%" stop-color="#1D71B8" />
+        <stop offset="100%" stop-color="#1D3A6D" />
       </linearGradient>
     </defs>
   </svg>

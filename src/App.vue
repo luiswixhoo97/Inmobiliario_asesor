@@ -5,9 +5,13 @@
     <AppNavbar />
     <main>
       <HeroSection />
+      <ConnectSection />
       <ValueProposition />
       <MarqueeBand />
       <AdvisorPresentation />
+      <CasaHeroSection />
+      <VenderHeroSection />
+      <VideoTextSection />
       <TrustMetrics />
       <MarqueeBand />
       <TestimonialsSection />
@@ -27,15 +31,21 @@ import AppPreloader from './components/AppPreloader.vue'
 import AppNavbar from './components/AppNavbar.vue'
 import HeroSection from './components/HeroSection.vue'
 import ValueProposition from './components/ValueProposition.vue'
-import MarqueeBand from './components/MarqueeBand.vue'
+/*import MarqueeBand from './components/MarqueeBand.vue'*/
 import AdvisorPresentation from './components/AdvisorPresentation.vue'
-import TrustMetrics from './components/TrustMetrics.vue'
-import TestimonialsSection from './components/TestimonialsSection.vue'
+import CasaHeroSection from './components/CasaHeroSection.vue'
+import VenderHeroSection from './components/VenderHeroSection.vue'
+import VideoTextSection from './components/VideoTextSection.vue'
+import ConnectSection from './components/ConnectSection.vue'
+
+
+/*import TrustMetrics from './components/TrustMetrics.vue'*/
+/*import TestimonialsSection from './components/TestimonialsSection.vue'
 import PropertiesSection from './components/PropertiesSection.vue'
 import AdvisorVideo from './components/AdvisorVideo.vue'
-import ContactSection from './components/ContactSection.vue'
+import ContactSection from './components/ContactSection.vue'*/
 import AppFooter from './components/AppFooter.vue'
-import FloatingContactButton from './components/FloatingContactButton.vue'
+/*import FloatingContactButton from './components/FloatingContactButton.vue'*/
 
 useLenis()
 

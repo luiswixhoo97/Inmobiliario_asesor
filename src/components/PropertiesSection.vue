@@ -1,18 +1,18 @@
 <template>
-  <section id="propiedades" ref="sectionRef" class="noise-overlay relative py-24 md:py-32">
+  <section id="propiedades" ref="sectionRef" class="noise-overlay relative flex min-h-screen flex-col justify-center py-24 md:py-32 bg-off-white">
     <div class="mx-auto max-w-7xl px-6 lg:px-12">
       <!-- Header + View toggle -->
       <div class="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between md:mb-16">
         <div>
-          <p class="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-gold">
+          <p class="mb-4 text-sm font-medium uppercase tracking-[0.25em] text-blue-light">
             Portafolio Exclusivo
           </p>
-          <h2 class="font-display text-3xl font-semibold leading-tight text-white md:text-4xl lg:text-5xl">
-            <span class="gold-gradient-text">Propiedades</span> Disponibles
+          <h2 class="font-display text-3xl font-semibold leading-tight text-gray-card md:text-4xl lg:text-5xl">
+            <span class="blue-gradient-text">Propiedades</span> Disponibles
           </h2>
           <div class="mt-4 flex items-center gap-3">
-            <div class="h-[1px] w-16 bg-gradient-to-r from-gold/60 to-transparent" />
-            <div class="h-1.5 w-1.5 rotate-45 border border-gold/60" />
+            <div class="h-[1px] w-16 bg-gradient-to-r from-blue/60 to-transparent" />
+            <div class="h-1.5 w-1.5 rotate-45 border border-blue/60" />
           </div>
         </div>
 
@@ -21,7 +21,7 @@
           <button
             @click="viewMode = 'carousel'"
             class="flex items-center gap-2 rounded-sm px-4 py-2 text-sm font-medium transition-all duration-300"
-            :class="viewMode === 'carousel' ? 'bg-gold/10 text-gold border border-gold/30' : 'text-gray-muted hover:text-white border border-transparent'"
+            :class="viewMode === 'carousel' ? 'bg-blue/10 text-blue-light border border-blue/30' : 'text-gray-muted hover:text-gray-card border border-transparent'"
           >
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6z" />
@@ -31,7 +31,7 @@
           <button
             @click="viewMode = 'grid'"
             class="flex items-center gap-2 rounded-sm px-4 py-2 text-sm font-medium transition-all duration-300"
-            :class="viewMode === 'grid' ? 'bg-gold/10 text-gold border border-gold/30' : 'text-gray-muted hover:text-white border border-transparent'"
+            :class="viewMode === 'grid' ? 'bg-blue/10 text-blue-light border border-blue/30' : 'text-gray-muted hover:text-gray-card border border-transparent'"
           >
             <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 0v1.5c0 .621-.504 1.125-1.125 1.125" />
@@ -65,7 +65,7 @@
         <!-- Navigation arrows -->
         <button
           @click="scrollCarousel(-1)"
-          class="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gold/30 bg-black-deep/80 text-gold backdrop-blur-sm transition-all duration-300 hover:border-gold hover:bg-gold/10"
+          class="absolute left-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-blue/30 bg-off-white/90 text-blue-light backdrop-blur-sm transition-all duration-300 hover:border-blue hover:bg-blue/10"
         >
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -73,7 +73,7 @@
         </button>
         <button
           @click="scrollCarousel(1)"
-          class="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-gold/30 bg-black-deep/80 text-gold backdrop-blur-sm transition-all duration-300 hover:border-gold hover:bg-gold/10"
+          class="absolute right-4 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-blue/30 bg-off-white/90 text-blue-light backdrop-blur-sm transition-all duration-300 hover:border-blue hover:bg-blue/10"
         >
           <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />

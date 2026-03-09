@@ -1,6 +1,6 @@
 <template>
   <div ref="wrapperRef" class="image-reveal relative overflow-hidden" :class="className">
-    <div ref="overlayRef" class="absolute inset-0 z-10 origin-left gold-gradient-bg" />
+    <div ref="overlayRef" class="absolute inset-0 z-10 origin-left blue-gradient-bg" />
     <img
       ref="imgRef"
       :src="src"

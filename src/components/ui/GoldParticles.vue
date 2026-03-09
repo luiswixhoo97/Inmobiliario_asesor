@@ -27,11 +27,11 @@ onMounted(() => {
   resize()
   window.addEventListener('resize', resize)
 
-  const goldColors = [
-    'rgba(212, 175, 55, ',
-    'rgba(198, 165, 90, ',
-    'rgba(245, 215, 122, ',
-    'rgba(184, 148, 46, ',
+  const blueColors = [
+    'rgba(54, 169, 225, ',   // blue-light #36A9E1
+    'rgba(29, 113, 184, ',   // blue #1D71B8
+    'rgba(29, 58, 109, ',    // blue-dark #1D3A6D
+    'rgba(33, 48, 87, ',     // blue-deep #213057
   ]
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -42,7 +42,7 @@ onMounted(() => {
       speedX: (Math.random() - 0.5) * 0.3,
       speedY: (Math.random() - 0.5) * 0.3 - 0.1,
       opacity: Math.random() * 0.4 + 0.1,
-      color: goldColors[Math.floor(Math.random() * goldColors.length)],
+      color: blueColors[Math.floor(Math.random() * blueColors.length)],
       pulse: Math.random() * Math.PI * 2,
       pulseSpeed: Math.random() * 0.02 + 0.005,
     })

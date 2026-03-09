@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonios" ref="sectionRef" class="noise-overlay relative py-24 md:py-32">
+  <section id="testimonios" ref="sectionRef" class="noise-overlay relative flex min-h-screen flex-col justify-center py-24 md:py-32 bg-off-white">
     <div class="mx-auto max-w-7xl px-6 lg:px-12">
       <SectionTitle
         title="Lo que dicen mis clientes"
@@ -8,7 +8,7 @@
       />
 
       <div ref="testimonialContent" class="relative">
-        <svg class="absolute -top-4 left-0 h-16 w-16 text-gold/10 md:-top-8 md:h-24 md:w-24" fill="currentColor" viewBox="0 0 24 24">
+        <svg class="absolute -top-4 left-0 h-16 w-16 text-blue/10 md:-top-8 md:h-24 md:w-24" fill="currentColor" viewBox="0 0 24 24">
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10H14.017zM0 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151C7.546 6.068 5.983 8.789 5.983 11H10v10H0z" />
         </svg>
 
@@ -16,11 +16,11 @@
           <div class="relative z-10">
             <transition name="fade" mode="out-in">
               <div :key="activeTestimonial">
-                <p class="mb-8 font-display text-xl leading-relaxed text-white/90 italic md:text-2xl lg:text-3xl">
+                <p class="mb-8 font-display text-xl leading-relaxed text-gray-card/90 italic md:text-2xl lg:text-3xl">
                   "{{ testimonials[activeTestimonial].text }}"
                 </p>
                 <div>
-                  <p class="text-lg font-semibold text-gold">{{ testimonials[activeTestimonial].name }}</p>
+                  <p class="text-lg font-semibold text-blue-light">{{ testimonials[activeTestimonial].name }}</p>
                   <p class="text-sm text-gray-muted">{{ testimonials[activeTestimonial].role }}</p>
                 </div>
               </div>
@@ -31,7 +31,7 @@
                 v-for="(_, i) in testimonials"
                 :key="i"
                 class="h-2 rounded-full transition-all duration-300"
-                :class="activeTestimonial === i ? 'w-8 bg-gold' : 'w-2 bg-gray-border hover:bg-gray-muted'"
+                :class="activeTestimonial === i ? 'w-8 bg-blue' : 'w-2 bg-gray-border hover:bg-gray-muted'"
                 @click="activeTestimonial = i"
               />
             </div>
